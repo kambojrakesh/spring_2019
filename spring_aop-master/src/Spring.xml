@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+    
+    <aop:aspectj-autoproxy/>
+
+   <bean class="com.model.Circle" id="circle">
+    	<property name="name" value="Circle is creating"></property>
+    </bean>
+    
+    <bean class="com.model.Triangle" id="triangle">
+    	<property name="name" value="Triangle is creating"></property>
+    </bean>
+    
+     <bean class="com.model.ShapeService" id="shapeService" autowire="byName"/>
+
+ <!--  	 <bean id="loggingAspect" class="com.advice.LoggingAspect"></bean>
+
+     <bean id="loggingAspectCheck" class="com.advice.LoggingAspectCheck"></bean>
+      
+     <bean id="loggingAspectJoint" class="com.advice.LoggingAspectJoint"></bean> -->
+<!--      
+     <bean id="loggingAspectJoint" class="com.advice.LoggingAspectAfter"></bean> -->
+     
+     <bean id="loggingAspectAround" class="com.advice.LoggingAspectAround"></bean>
+     
+</beans>
